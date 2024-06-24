@@ -1,0 +1,221 @@
+<html>
+    <head> <title>Class Activity 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <link rel="icon" type="image/x-icon" href="Logo_last.png">
+      
+        <style>
+          
+          #storydiv { 
+                height: 100%;
+                position: relative;         
+              }
+                      
+            #storydiv p {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            
+            .maindiv{
+                border:5px ridge rgb(12, 96, 206);
+                margin:1%;
+                border-radius:20px
+            }
+
+            p{
+                font-size:30px;
+                font-weight: bold;
+            }
+
+           
+
+            #nextbtn, #backbtn, #newbtn{
+                width: 25%;
+                font-size:20px;
+                margin-right: 5%;
+                position: relative;
+                
+            }
+
+            #backbtn, #newbtn{
+                display:none;
+            }
+
+            #family{
+                width:95%;
+                height:95%;
+            }
+
+            #about{
+                font-weight: bold;
+                font-size:40px;
+                color:rgb(7, 7, 89)
+            }
+
+            #story{ 
+                font-size: 1.4vw;
+                border-radius: 20px;
+            }
+
+            #imgdiv{
+                position:relative;
+            }
+            .table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            padding: 10px;
+            text-align: center;
+        }
+         
+        
+        </style>
+</head>
+
+    <body> 
+        <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+            <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+            <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+        </div>
+         <br>
+        <br>
+        
+        <center>
+            <h2 id="about"><i>Vegan Lemon Cake</i></h2>
+            <div class="maindiv container-fluid" style="height:60%;">
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11 imgdiv">
+                   <img id="family" src="intro.jpg" style="width:100%;"> 
+               </div>
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11" id='storydiv'>
+                   <p id="story" style="text-align:left; width:100%;"> 
+
+                    Today we will focus on <span style="color: blue;">prepositions</span>that always perform two functions in a sentence:<br>
+                    
+                    <span style="padding-left: 20px;">1) Linking two words or a word and a phrase</span><br>
+                    <span style="padding-left: 20px;">2) Denoting a relationship between those words or the word and </span>
+                    <span style="padding-left: 45px;">the phrase it is linking.</span><br>
+                    Let us look at the sentence below:<br>
+                    The cat is sitting <span style="color: blue;"><u>under</u></span> the tree.<br>
+                    ‘Under’ is used before ‘the tree’ and it is linking the cat and the tree by denoting a relationship of location.                    
+                </p> 
+            </div>
+        </center>     
+        </div>
+        <br>
+        <div class="" style="text-align:center;">
+            
+            <button id="backbtn" onclick="backpic()" class="btn btn-success">Back</button>
+            <button id="nextbtn" onclick="update()" class="btn btn-success">Continue</button>
+            <button id="newbtn" onclick="newpage()" class="btn btn-success">Next</button>
+           
+                  
+        </div>
+     
+        </center>   
+
+        <script>
+
+            var images = ["Assets/1.jpg", "Assets/2.jpg", "Assets/3.jpg", "Assets/4.jpg", "Assets/5.jpg", "Assets/6.jpg","Assets/7.jpg","Assets/8.jpg","Assets/9.jpg","Assets/10.jpg","Assets/11.jpg","Assets/12.jpg","Assets/13.jpg","Assets/14.jpg","Assets/15.jpg","Assets/16.jpg","Assets/17.jpg","Assets/18.jpg","Assets/19.jpg","Assets/20.jpg","Assets/21.jpg","Assets/22.jpg","Assets/23.jpg","Assets/24.jpg","Assets/25.jpg"];
+
+            var para=[ " <u>Definition of preposition</u>:<br><br><span style='color:blue'><i>A preposition is a word or group of words that is always used before a noun, pronoun or noun phrase to link them to other words in a sentence to show relationships of time, place, location, direction etc.between them or to introduce an object.</i></span>",
+
+                       "Let's look at the recipe of the luscious vegan lemon drizzle cake. Light and zingy, it also works well if you replace the flour and baking powder with gluten-free alternatives<br>",
+
+                       "<span style='color:blue'><i>“Oil a 1lb loaf tin and line it with baking parchment.”</i></span><br>The above sentence tells us that two objects ‘tin’ and ‘baking parchment’ have a relationship. The former needs to be lined with the latter. Here, ‘baking parchment’ is the agent by which the action of lining has been conducted. ‘With’ helps us to understand that the ‘baking parchment’ is theagent or means. Thus, ‘with’ sitting before ‘baking parchment’ is the <span style='color:blue'><u> preposition of agency or means</u></span>.<br>Another example of <u>preposition of agency</u> or means is <span style='color:blue'>“by”</span>.", 
+
+                       "➕ The Oxford dictionary states three meanings of the term ‘accompaniment’. The meaning that is associated with ‘<u>preposition of accompaniment</u>’ is the following. :<br><i>[countable] accompaniment (to something) something that you eat, drink, or use together with something else.<i>",
+
+                       "<span style='color: blue;'><i>“Mix the flour, sugar, baking powder and lemon zest in a bowl.”</i></span><br>In the sentence above, <span style='background-color:rgb(67, 218, 232)'>‘in’</span> sitting before <span style='color:blue'>‘bowl’</span> is functioning as a <span style='color:blue'><u>preposition of place</u></span> because it is telling us where the flour, sugar, baking powder and lemon zest are going to be mixed. Let us look at the examples below to have better clarity on this:<br><br>A few more examples of <u>prepositions of place</u> are : <span style='color:rgb(151, 62, 230')><i>Under, above, beneath, below, beside, among, on, at</i></span>",
+
+                       "<span style='color: blue;'><i>“Add the oil, lemon juice and 170ml cold water, then mix until smooth.”</i></span><br>In the sentence above, <span style='background-color:rgb(67, 218, 232)'>‘until’ </span> before <span style='color:blue'>‘smooth’</span> is functioning as a <span style='color:blue'><u>preposition of time</u></span> because it is giving us the sense of time by telling us that we should stop mixing the batter of flour,sugar, baking powder and lemon zest only when it turns smooth.<br><br>Few more examples of <u>prepositions of time</u> are : <span style='color:rgb(151, 62, 230')><i>Before, After, During, At, In, On, For, Since</i></span>",
+
+                       "<span style='color: blue;'><i>“Pour the mixture into the tin.”</i></span><br>In the sentence above,<span style='background-color:rgb(67, 218, 232)'>‘into’</span> sitting before <span style='color:blue'>‘the tin’</span> is functioning as a <span style='color:blue'><u>preposition of direction</u></span> because it is denoting the movement of the mixture. ‘Into’ suggests that the mixture is being poured in such a manner that it gets inside the tin. <u>Preposition of direction denotes movement and direction</u>. Here, we see a relationship between two objects; ‘the mixture’ and ‘the tin’ being established by the preposition ‘with’.<br><br>Few more examples of <u>prepositions of direction</u> are : <span style='color:rgb(151, 62, 230')><i>Away from, Through, Across, To, Along, From, Out of, Towards</i></span>",
+
+                       "<span style='background-color: rgb(237, 178, 95)'>The interesting case of “TO”:</span><br><span style='color: blue;'><i>“Cool the cake in the tin for 10 mins, then remove it from the tin and transfer it to a wire rack to cool fully.”</i></span><br>In the above sentence we can notice that the word <span style='color:blue'>“to”</span> has been used two times. First, it is used before the noun <span style='color:blue'>“wire rack”</span> to denote movement. <span style='color:blue'>“To”</span> here is a <span style='color:blue'><u>preposition of direction</u></span>. <u>Preposition of direction denotes movement and direction</u>.<br><br>Second, it is used before the verb <span style='color:blue'>“cool”</span>. <span style='color:blue'>“Cool”</span> is used as a verb here and not as an adjective and it is proved by the use of the adverb of degree <span style='color:blue'>“fully”</span> after it. When <span style='color:blue'>“to”</span> is used before the first form/infinitive form of a verb it functions as an<span style='color:blue'> infinitive marker</span> and <span style='color:blue'>not as a preposition.”</span>",
+
+                       "<span style='color: blue;'><i>“For the icing, sieve the icing sugar into a bowl.”</i></span><br>In the above sentence <span style='color: blue;'>“For”</span>, sitting before the noun <span style='color: blue;'>“icing”</span>, is a <span style='color: blue;'>preposition of purpose</span>. It helps us to establish a relationship of purpose between the icing and the pouring of the sugar into the bowl.<br><br>Another example of <u>prepositions of purpose</u> is <span style='color:rgb(151, 62, 230')><i>“to”</i></span>.",
+
+                       "<span style='color: blue;'><i>“Mix in just enough lemon juice to make an icing thick enough to pour over the loaf (if you make the icing too thin, it will just run off the cake).”</i></span><br><span style='color: blue;'>“Over”</span> in the above sentence acts as a <span style='color: blue;'><u>preposition of direction</u></span> as it suggests the direction of the movement of the mixture on top of the loaf. <u>Preposition of direction denotes movement and direction</u>.<br><br>Few more examples of <u>prepositions of direction</u> are : <span style='color:rgb(151, 62, 230')><i>Away from, Through, Across, To, Along, From, Out of, Towards</i></span>",
+
+                       "<span style='color: blue;'>Let us look into <i>prepositional phrases, phrasal adverbs</i> and few more types of prepositions:</span> <br><br>Simple prepositions: They are single-word prepositions that denote relationships of time, place, direction, manner, or other relationships.<br><br><span style='color: red;'><i>In a sentence, a simple preposition can function as more than one type of preposition depending on its use.</i></span><br><br>Examples include : 'on,' 'for,' 'in,' 'over,' 'at,' 'under,' 'with', 'from' and 'by'",
+
+                       "<ul><li>He did not complete his homework <span style='color:rgb(151, 62, 230')><i>on top of</i></span> that he made someone else do it for him.</li><li><span style='color:rgb(151, 62, 230')><i>Instead of</i></span> sitting idle, why don't you read your favourite book on the history of video games?</li><li><span style='color:rgb(151, 62, 230')><i>According to</i></span> yesterday’s weather report, it was supposed to rain heavily today, but it didn't.</li><li><span style='color:rgb(151, 62, 230')><i>Prior to</i></span> the announcement of the names of the winners the chief guest left due to an emergency.</li><li>Team B is always <span style='color:rgb(151, 62, 230')><i>ahead of</i></span> time</li></ul>Few more examples are: <span style='color:rgb(151, 62, 230')><i>Aside from, Next to, Because of, Along with, But for, Apart from, Contrary to, As for, Except for, As to etc.</i></span>",
+
+                       "For Instance:<br><br><table style='width:100%'><tr><th>CORRECT USE</th><th>INCORRECT USE</th></tr><tr><td>Because of</td><td>Because for</td></tr><tr><td>Next to</td><td>Next at</td></tr><tr><td>But for</td><td>But of</td></tr></table>",
+
+                        "<span style='color:rgb(209, 111, 46);'>Prepositions of Condition:</span>These prepositions denote condition or state. Let us look at the examples below to have better clarity on this:<ol><li>The Biber Family is <span style='background-color:rbg(40, 235, 231)'> on</span> vacation.</li><li>The princess was <span style='background-color:rbg(40, 235, 231)'> in</span> danger.</li><li>I was<span style='background-color:rbg(40, 235, 231)'> in</span> doubt about you.</li><li>Roger’s grandfather is <span style='background-color:rbg(40, 235, 231)'>in</span> a coma.</li><li>Put the project <span style='background-color:rbg(40, 235, 231)'>on</span> hold.</li><li>Just be <span style='background-color:rbg(40, 235, 231)'>at</span> ease, everything will be fine</li></ol> ",
+
+                
+
+                       
+                    ]
+            
+
+
+
+                    var i = -1;
+            function update(){
+                i++
+                document.getElementById("backbtn").style.display="inline-block"
+                if(i > para.length-1){
+                    document.getElementById("nextbtn").style.display="none"
+                    document.getElementById("newbtn").style.display="inline-block"
+                    document.getElementById("family").src = "";
+                    document.getElementById("story").style.borderLeftStyle="solid"
+                    document.getElementById("story").style.borderLeftColor="rgb(164, 246, 229)"
+                    document.getElementById("about").innerHTML = "Vegan Lemon Cake";
+                    document.getElementById("story").innerHTML = "<span style='color:rgb(209, 111, 46);'>Prepositional Phrases:</span>Simply put, prepositional phrases are groups of words that start with a preposition, followed by its object which is a noun and any modifier. A prepositional phrase functions as a preposition in a sentence. They provide additional information about time, location, direction and other relationships. Let us look at the examples below to have a better clarity on this:<ol><li>The lady <span style='color:rgb(151, 62, 230')><i>with the long hair</i></span> told us to wait at the lobby.</li><li>The cat sat <span style='color:rgb(151, 62, 230')><i>beneath the tree.</i></span></li><li>The books are kept <span style='color:rgb(151, 62, 230')><i>on a large table.</i></span></li></ol> "
+                    
+                }
+                else{
+                    document.getElementById("story").style.fontSize="1.4vw"
+                    document.getElementById("story").style.backgroundColor="white"
+                    document.getElementById("about").innerHTML="Vegan Lemon Cake"
+                     var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+              
+            }
+            };
+
+          
+
+            function backpic(){
+                i=i-1
+                console.log(i)
+
+                if(i<0){
+                    document.getElementById("story").style.fontSize="1.35vw"
+                    document.getElementById("backbtn").style.display="none"
+                    document.getElementById("nextbtn").style.display="inline-block"
+                    document.getElementById("family").src = "intro.jpg";
+                    document.getElementById("about").innerHTML="Vegan Lemon Cake"
+                    document.getElementById("story").innerHTML = '<p id="story" style="text-align:left; width:100%;"> Today we will focus on <span style="color: blue;">prepositions</span>that always perform two functions in a sentence:<br><span style="padding-left: 20px;">1) Linking two words or a word and a phrase</span><br><span style="padding-left: 20px;">2) Denoting a relationship between those words or the word and </span><span style="padding-left: 45px;">the phrase it is linking.</span><br>Let us look at the sentence below:<br>The cat is sitting <span style="color: blue;"><u>under</u></span> the tree.<br>‘Under’ is used before ‘the tree’ and it is linking the cat and the tree by denoting a relationship of location.</p> '
+                }
+                else{
+                document.getElementById("story").style.fontSize="1.4vw"
+                document.getElementById("story").style.backgroundColor="white"
+                document.getElementById("nextbtn").style.display="inline-block"
+                document.getElementById("about").innerHTML="Vegan Lemon Cake"
+                var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+                }
+            }
+
+    
+    </script>
+        
+    </body>
+</html>
